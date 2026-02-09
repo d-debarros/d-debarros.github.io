@@ -20,7 +20,9 @@ function initThree() {
     0.1,
     1000
   );
-  camera.position.z = 100;
+  // Initial offset tilt for better visual perspective
+  camera.position.set(40, 60, 80);
+  camera.lookAt(0, 20, 0);
   
   // Renderer
   renderer = new THREE.WebGLRenderer({ 
@@ -113,6 +115,8 @@ function createPointCloud() {
   });
   
   pointCloud = new THREE.Points(geometry, material);
+  // Start at 45 degree angle for better initial perspective
+  pointCloud.rotation.x = Math.PI / 4;
   scene.add(pointCloud);
 }
 
