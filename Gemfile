@@ -19,6 +19,13 @@ group :jekyll_plugins do
   gem 'jekyll-spaceship'
 end
 
+# Ruby 3.4+ requires these gems to be explicitly added
+gem 'csv'
+gem 'logger'
+gem 'base64'
+gem 'bigdecimal'
+gem 'fiddle'
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
