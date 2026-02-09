@@ -1,0 +1,152 @@
+---
+layout: default
+title: Home
+---
+
+<div id="threejs-container"></div>
+
+<!-- Sticky Console Navigation -->
+<nav class="console-nav">
+  <div class="console-breadcrumb">
+    <span class="breadcrumb-item"><a href="#hero">DB:</a></span>
+    <span class="breadcrumb-item"><a href="#about">About</a></span>
+    <span class="breadcrumb-item"><a href="#experience">Experience</a></span>
+    <span class="breadcrumb-item"><a href="#music">Music</a></span>
+    <span class="breadcrumb-item"><a href="#contact">Contact</a></span>
+    <span class="breadcrumb-item"><a href="/assets/pdf/resume.pdf" target="_blank">Resume &gt;</a></span>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="section">
+  <div class="content-wrapper">
+    <h1 class="hero-title">Daniel de Barros</h1>
+    <div class="scroll-indicator">
+      <span>↓</span>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+  <div class="content-wrapper">
+    <h2>About Me</h2>
+    <div class="about-with-photo">
+      <div class="headshot-container">
+        <img src="/assets/images/roffa.jpeg" alt="Daniel de Barros" class="headshot">
+      </div>
+      <div class="about-content">
+        <p>
+          Howzit 👋 I'm Daniel de Barros (but everyone calls me DB).
+        </p>
+        <p>
+          I am a passionate and altruistic engineer with a focus on control systems, 
+          software and medical devices - passionate about relieving suffering in the world. 
+          Currently, I am in the R&D team at Zimmer Biomet that builds 
+          <a href="https://www.zimmerbiomet.com/en/products-and-solutions/specialties/hip/one-planner-hip.html" target="_blank">One Planner Hip 2D</a> 
+          and 3D. When I am not abusing the terminal or trying to center this div, 
+          you will most likely find me indulging in some voluntary suffering (🏃🚴‍♂️🏊) 
+          or tending to a plethora of plants.
+        </p>
+      </div>
+    </div>
+    
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>📍 Location</h3>
+        <p>Rotterdam, the Netherlands</p>
+      </div>
+      <div class="info-card">
+        <h3>🔧 Background</h3>
+        <p>EC&I & Software Engineering in Mining, Oil, Gas & Medical Device industries</p>
+      </div>
+      <div class="info-card">
+        <h3>🌍 Origins</h3>
+        <p>Born in Johannesburg to Portuguese parents</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="section">
+  <div class="content-wrapper">
+    <h2>Experience</h2>
+    <div class="experience-content">
+      <p>
+        I worked for a period of 4 years in the Mining, Oil and Gas and Chemical/Process 
+        industries as an EC&I (Electrical, Control and Instrumentation) and Software Engineer, 
+        across South Africa and the Netherlands.
+      </p>
+      <div class="cta-button">
+        <a href="/assets/pdf/resume.pdf" target="_blank" class="btn-primary">View Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Spotify Section -->
+<section id="music" class="section">
+  <div class="content-wrapper">
+    <h2>Currently Listening To</h2>
+    <div class="spotify-wrapper">
+      <iframe 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1EpmVLg60ReTIs?utm_source=generator&theme=0" 
+        width="100%" 
+        height="400" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Strava Section -->
+<section id="strava" class="section">
+  <div class="content-wrapper">
+    <h2>Recent Activities</h2>
+    <p class="section-intro">When I'm not coding, I'm out there suffering voluntarily 🏃🚴‍♂️🏊</p>
+    <div class="strava-wrapper">
+      <iframe 
+        height="400" 
+        width="100%" 
+        frameborder="0" 
+        allowtransparency="true" 
+        scrolling="no" 
+        src="https://www.strava.com/athletes/50451023/latest-rides/8bc00ab66515a602ddfa16d82929e2443d41faf6"
+        style="border-radius:12px;">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+  <div class="content-wrapper">
+    <h2>Get In Touch</h2>
+    <div class="contact-links">
+      <a href="mailto:danieldb12@gmail.com" class="contact-link">
+        <i class="fa-regular fa-envelope"></i> Email
+      </a>
+      <a href="https://github.com/d-debarros" class="contact-link" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/daniel-de-barros" class="contact-link" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Three.js from CDN -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.165.0/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="/assets/js/app.js"></script>
