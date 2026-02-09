@@ -11,7 +11,7 @@ source "https://rubygems.org"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.5"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
+# uncomment the line below. To upgrade, run `bundle update github-pages`.npm 
 gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
@@ -41,3 +41,10 @@ end
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "webrick", "~> 1.8"
+
+# Ruby 3.4.0+ and 4.0+ compatibility - gems removed from standard library
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"
+gem "fiddle"

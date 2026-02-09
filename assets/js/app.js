@@ -137,7 +137,7 @@ function onWindowResize() {
 
 function onScroll() {
   const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-  pointCloud.rotation.x = (Math.PI / 4) + (scrollPercent * Math.PI * 2);
+  pointCloud.rotation.x = scrollPercent * Math.PI * 2;
 }
 
 function animate() {
