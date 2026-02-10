@@ -67,6 +67,31 @@ body {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(97%) sepia(8%) saturate(1621%) hue-rotate(359deg) brightness(103%) contrast(92%);
+  opacity: 0.85;
+  transition: var(--transition);
+  display: block;
+}
+
+.logo-img:hover {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(89%) sepia(47%) saturate(1481%) hue-rotate(358deg) brightness(104%) contrast(97%);
+  transform: scale(1.1);
 }
 
 .console-breadcrumb {

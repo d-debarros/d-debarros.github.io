@@ -11,10 +11,12 @@ title: Home
     <span class="breadcrumb-item"><a href="#hero">DB:</a></span>
     <span class="breadcrumb-item"><a href="#about">About</a></span>
     <span class="breadcrumb-item"><a href="#experience">Experience</a></span>
-    <span class="breadcrumb-item"><a href="#pong">Pong</a></span>
     <span class="breadcrumb-item"><a href="#music">Music</a></span>
     <span class="breadcrumb-item"><a href="#contact">Contact</a></span>
     <span class="breadcrumb-item"><a href="/assets/pdf/resume.pdf" target="_blank">Resume &gt;</a></span>
+  </div>
+  <div class="nav-logo">
+    <img src="/assets/images/sinc-logo.svg" alt="Logo" class="logo-img">
   </div>
 </nav>
 
@@ -86,25 +88,6 @@ title: Home
   </div>
 </section>
 
-<!-- Pong Game Section -->
-<section id="pong" class="section">
-  <div class="content-wrapper">
-    <h2>Play Pong</h2>
-    <p class="section-intro">A classic game with a twist 🎮</p>
-    <div class="pong-container">
-      <div class="pong-info">
-        <p><strong>Controls:</strong> Arrow Up/Down to move paddle</p>
-        <p>Beat the AI to score points!</p>
-      </div>
-      <canvas id="pong-canvas" class="pong-canvas"></canvas>
-      <div class="pong-controls">
-        <button id="pong-start-btn" class="btn-primary">Start Game</button>
-        <button id="pong-reset-btn" class="btn-secondary">Reset</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Spotify Section -->
 <section id="music" class="section">
   <div class="content-wrapper">
@@ -170,28 +153,3 @@ title: Home
 }
 </script>
 <script type="module" src="/assets/js/app.js"></script>
-<script src="/assets/js/pong.js"></script>
-<script>
-  // Pong game controls
-  document.addEventListener('DOMContentLoaded', () => {
-    const startBtn = document.getElementById('pong-start-btn');
-    const resetBtn = document.getElementById('pong-reset-btn');
-    
-    if (startBtn && window.pongGame) {
-      startBtn.addEventListener('click', () => {
-        window.pongGame.start();
-        startBtn.textContent = 'Pause';
-      });
-      
-      startBtn.addEventListener('click', () => {
-        window.pongGame.pause();
-      });
-    }
-    
-    if (resetBtn && window.pongGame) {
-      resetBtn.addEventListener('click', () => {
-        window.pongGame.reset();
-      });
-    }
-  });
-</script>
