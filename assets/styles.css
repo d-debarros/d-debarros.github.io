@@ -321,7 +321,7 @@ a:hover {
   background: rgba(255, 255, 255, 0.05);
   padding: 10px;
   border-radius: 15px;
-  font-size: 0.9rem;
+  font-size: 0.5rem;
   border: 2px solid rgba(228, 224, 9, 0.3);
   transition: var(--transition);
 }
