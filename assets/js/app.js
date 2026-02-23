@@ -5,6 +5,7 @@ let scene, camera, renderer, pointCloud;
 let mouseX = 0, mouseY = 0;
 let windowHalfX = window.innerWidth / 2;
 let windowHalfY = window.innerHeight / 2;
+let waveColorYellow = false; // Track wave color state
 
 function initThree() {
   const container = document.getElementById('threejs-container');
@@ -41,6 +42,13 @@ function initThree() {
   window.addEventListener('resize', onWindowResize);
   document.addEventListener('scroll', onScroll);
   
+  // Logo click handler for wave color toggle
+  const logoImg = document.querySelector('.logo-img');
+  if (logoImg) {
+    logoImg.addEventListener('click', toggleWaveColor);
+    logoImg.style.cursor = 'pointer';
+  }
+  
   // Start Animation
   animate();
 }
@@ -70,12 +78,20 @@ function createPointCloud() {
       
       vertices.push(x, y, z);
       
-      // Black and white gradient based on distance from center
+      // Color based on toggle state
       const color = new THREE.Color();
       const distFromCenter = Math.sqrt(x * x + z * z);
       const maxDist = Math.sqrt(2) * width;
-      const grayscale = 1.0 - (distFromCenter / maxDist) * 0.7;
-      color.setRGB(grayscale, grayscale, grayscale);
+      
+      if (waveColorYellow) {
+        // Yellow gradient (R: 1.0, G: 1.0, B: 0)
+        const yellowIntensity = 1.0 - (distFromCenter / maxDist) * 0.7;
+        color.setRGB(yellowIntensity, yellowIntensity, 0);
+      } else {
+        // White gradient (original)
+        const grayscale = 1.0 - (distFromCenter / maxDist) * 0.7;
+        color.setRGB(grayscale, grayscale, grayscale);
+      }
       colors.push(color.r, color.g, color.b);
     }
   }
@@ -118,6 +134,50 @@ function createPointCloud() {
   // Start at 45 degree angle for better initial perspective
   pointCloud.rotation.x = Math.PI / 4;
   scene.add(pointCloud);
+}
+
+function toggleWaveColor() {
+  waveColorYellow = !waveColorYellow;
+  updateWaveColors();
+}
+
+function updateWaveColors() {
+  const geometry = pointCloud.geometry;
+  const colors = geometry.attributes.color.array;
+  const positions = geometry.attributes.position.array;
+  
+  const width = 200;
+  const depth = 200;
+  
+  let colorIndex = 0;
+  for (let i = 0; i < width; i++) {
+    for (let j = 0; j < depth; j++) {
+      if (colorIndex * 3 + 2 < colors.length) {
+        const x = positions[colorIndex * 3];
+        const z = positions[colorIndex * 3 + 2];
+        
+        const distFromCenter = Math.sqrt(x * x + z * z);
+        const maxDist = Math.sqrt(2) * width;
+        
+        if (waveColorYellow) {
+          // Yellow gradient
+          const yellowIntensity = 1.0 - (distFromCenter / maxDist) * 0.7;
+          colors[colorIndex * 3] = yellowIntensity;
+          colors[colorIndex * 3 + 1] = yellowIntensity;
+          colors[colorIndex * 3 + 2] = 0;
+        } else {
+          // White gradient
+          const grayscale = 1.0 - (distFromCenter / maxDist) * 0.7;
+          colors[colorIndex * 3] = grayscale;
+          colors[colorIndex * 3 + 1] = grayscale;
+          colors[colorIndex * 3 + 2] = grayscale;
+        }
+      }
+      colorIndex++;
+    }
+  }
+  
+  geometry.attributes.color.needsUpdate = true;
 }
 
 function onMouseMove(event) {

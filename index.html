@@ -57,11 +57,11 @@ title: Home
     <div class="info-grid">
       <div class="info-card">
         <h3>📍 Location</h3>
-        <p>based in Rotterdam, the Netherlands</p>
+        <p>Rotterdam, the Netherlands</p>
       </div>
       <div class="info-card">
         <h3>🔧 Background</h3>
-        <p>Electrical, Control Systems & Software Engineering in Mining, Oil, Gas & Medical Device industries. Holding Degrees in both Electrical and Biomedical Engineering.</p>
+        <p>EC&I & Software Engineering in Mining, Oil, Gas & Medical Device industries</p>
       </div>
       <div class="info-card">
         <h3>🌍 Origins</h3>
@@ -130,19 +130,60 @@ title: Home
 <section id="contact" class="section">
   <div class="content-wrapper">
     <h2>Get In Touch</h2>
-    <div class="contact-links">
-      <a href="mailto:danieldb12@gmail.com" class="contact-link">
-        <i class="fa-regular fa-envelope"></i>
-      </a>
-      <a href="https://github.com/d-debarros" class="contact-link" target="_blank">
-        <i class="fab fa-github"></i> 
-      </a>
-      <a href="https://www.linkedin.com/in/daniel-de-barros" class="contact-link" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://www.strava.com/athletes/50451023" class="contact-link" target="_blank">
-        <i class="fab fa-strava"></i> 
-      </a>
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/mlgwoolq" method="POST">
+        <div class="form-group">
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name" 
+            required
+            class="form-input"
+          >
+        </div>
+        <div class="form-group">
+          <input 
+            type="text" 
+            name="Subject" 
+            placeholder="Lets Talk About..." 
+            required
+            class="form-input"
+          >
+        </div>
+        <div class="form-group">
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email" 
+            required
+            class="form-input"
+          >
+        </div>
+        <div class="form-group">
+          <textarea 
+            name="message" 
+            placeholder="Your Message" 
+            rows="5"
+            required
+            class="form-input"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+
+      <!-- Social Links -->
+      <div class="contact-links">
+        <a href="https://github.com/d-debarros" class="contact-link" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/daniel-de-barros" class="contact-link" target="_blank">
+          <i class="fab fa-linkedin"></i> 
+        </a>
+        <a href="https://www.strava.com/athletes/50451023" class="contact-link" target="_blank">
+          <i class="fab fa-strava"></i> 
+        </a>
+      </div>
     </div>
   </div>
 </section>
