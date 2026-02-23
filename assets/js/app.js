@@ -251,13 +251,60 @@ function initSmoothScroll() {
   });
 }
 
+// ============================================================================
+// Image Lightbox/Modal
+// ============================================================================
+function initLightbox() {
+  const modal = document.getElementById('image-lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeBtn = document.querySelector('.lightbox-close');
+  
+  // Get all expandable images
+  const expandableImages = document.querySelectorAll('[data-expandable="true"]');
+  
+  // Open lightbox when image is clicked
+  expandableImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent body scroll
+    });
+  });
+  
+  // Close lightbox
+  function closeLightbox() {
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scroll
+  }
+  
+  // Close on close button click
+  closeBtn.addEventListener('click', closeLightbox);
+  
+  // Close on background click (but not on image click)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeLightbox();
+    }
+  });
+  
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+}
+
 // Initialize on page load
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initThree();
     initSmoothScroll();
+    initLightbox();
   });
 } else {
   initThree();
   initSmoothScroll();
+  initLightbox();
 }

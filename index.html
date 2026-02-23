@@ -118,24 +118,24 @@ title: Home
       <!-- Yearly Distance Chart -->
       <div class="strava-chart">
         <h3>Yearly Distance</h3>
-        <img src="/assets/images/strava/yearly_distance.png" alt="Yearly distance: running vs cycling" class="strava-image">
+        <img src="/assets/images/strava/yearly_distance.png" alt="Yearly distance: running vs cycling" class="strava-image" data-expandable="true">
       </div>
       
       <!-- Elevation Gain Chart -->
       <div class="strava-chart">
         <h3>Elevation Gain</h3>
-        <img src="/assets/images/strava/elevation_gain.png" alt="Yearly elevation gain" class="strava-image">
+        <img src="/assets/images/strava/elevation_gain.png" alt="Yearly elevation gain" class="strava-image" data-expandable="true">
       </div>
       
       <!-- Countries Distribution Chart -->
-      <div class="strava-chart strava-chart-full">
+      <!-- <div class="strava-chart strava-chart-full">
         <h3>Activities by Country</h3>
-        <img src="/assets/images/strava/countries_distribution.png" alt="Distance distribution by country" class="strava-image">
-      </div>
+        <img src="/assets/images/strava/countries_distribution.png" alt="Distance distribution by country" class="strava-image" data-expandable="true">
+      </div> -->
     </div>
     
     <!-- Last Updated Info -->
-    <p class="strava-updated">Data last updated: <span id="strava-timestamp">--</span></p>
+    <p class="strava-updated">Data last updated: <span id="strava-timestamp">Feb 2026</span></p>
     
     <!-- Link to Strava Profile -->
     <p class="strava-cta">
@@ -207,6 +207,14 @@ title: Home
     </div>
   </div>
 </section>
+
+<!-- Image Lightbox Modal -->
+<div id="image-lightbox" class="lightbox-modal">
+  <div class="lightbox-content">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img id="lightbox-image" src="" alt="Expanded chart view" class="lightbox-image">
+  </div>
+</div>
 
 <!-- Three.js from CDN -->
 <script type="importmap">
