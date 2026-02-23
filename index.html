@@ -110,19 +110,39 @@ title: Home
 <!-- Strava Section -->
 <section id="strava" class="section">
   <div class="content-wrapper">
-    <h2>Recent Activities</h2>
+    <h2>Training Statistics</h2>
     <p class="section-intro">When I'm not coding, I'm out there suffering voluntarily 🏃🚴‍♂️🏊</p>
-    <div class="strava-wrapper">
-      <iframe 
-        height="400" 
-        width="100%" 
-        frameborder="0" 
-        allowtransparency="true" 
-        scrolling="no" 
-        src="https://www.strava.com/athletes/50451023/latest-rides/8bc00ab66515a602ddfa16d82929e2443d41faf6"
-        style="border-radius:12px;">
-      </iframe>
+    
+    <!-- Statistics Grid -->
+    <div class="strava-charts-container">
+      <!-- Yearly Distance Chart -->
+      <div class="strava-chart">
+        <h3>Yearly Distance</h3>
+        <img src="/assets/images/strava/yearly_distance.png" alt="Yearly distance: running vs cycling" class="strava-image">
+      </div>
+      
+      <!-- Elevation Gain Chart -->
+      <div class="strava-chart">
+        <h3>Elevation Gain</h3>
+        <img src="/assets/images/strava/elevation_gain.png" alt="Yearly elevation gain" class="strava-image">
+      </div>
+      
+      <!-- Countries Distribution Chart -->
+      <div class="strava-chart strava-chart-full">
+        <h3>Activities by Country</h3>
+        <img src="/assets/images/strava/countries_distribution.png" alt="Distance distribution by country" class="strava-image">
+      </div>
     </div>
+    
+    <!-- Last Updated Info -->
+    <p class="strava-updated">Data last updated: <span id="strava-timestamp">--</span></p>
+    
+    <!-- Link to Strava Profile -->
+    <p class="strava-cta">
+      <a href="https://www.strava.com/athletes/50451023" target="_blank" class="strava-profile-link">
+        View full profile on Strava →
+      </a>
+    </p>
   </div>
 </section>
 
